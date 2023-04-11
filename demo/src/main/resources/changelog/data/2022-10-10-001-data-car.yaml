@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2022-10-10-001-data-car
+      author: bondar
+      runOnChange: true
+      context: dev
+      loadUpdateData:
+        primaryKey: id
+        file: user.csv
+        relativeToChangelogFile: true
+        separator: ;
+        quotChar: '"'
+        seperator: ';'
+        encoding: UTF-8
+        tableName: car
