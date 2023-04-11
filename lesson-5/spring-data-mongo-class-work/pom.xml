@@ -4,13 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.mpei</groupId>
-    <artifactId>demo-projects</artifactId>
+    <groupId>ru.otus</groupId>
+    <artifactId>spring-data-mongo-class-work</artifactId>
     <version>1.0</version>
 
     <packaging>pom</packaging>
 
     <modules>
-        <module>spring-jdbc-demo</module>
+        <module>spring-data-mongo-exercise</module>
+        <module>spring-data-mongo-solution</module>
     </modules>
 </project>

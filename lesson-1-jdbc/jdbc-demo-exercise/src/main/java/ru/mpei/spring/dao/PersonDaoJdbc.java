@@ -2,6 +2,7 @@ package ru.mpei.spring.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Map;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
@@ -21,7 +22,7 @@ public class PersonDaoJdbc implements PersonDao {
     @Override
     public int count() {
         return jdbc.getJdbcOperations()
-            .queryForObject("select count(*) from persons", Integer.class);
+            .queryForObject("SELECT count(*) from persons", Integer.class);
     }
 
     @Override
@@ -31,12 +32,14 @@ public class PersonDaoJdbc implements PersonDao {
 
     @Override
     public Person getById(long id) {
+//        var params = Map.of("another_id", id);
+//        jdbc.query("select * from persons where id = :another_id", params, );
         return null;
     }
 
     @Override
     public List<Person> getAll() {
-        return null;
+        return jdbc.query("SELECT * FROM persons", new PersonMapper());
     }
 
     @Override
@@ -48,7 +51,9 @@ public class PersonDaoJdbc implements PersonDao {
 
         @Override
         public Person mapRow(ResultSet resultSet, int i) throws SQLException {
-            return null;
+            long id = resultSet.getLong("id");
+            String name = resultSet.getString("name");
+            return new Person(id, name);
         }
     }
 }

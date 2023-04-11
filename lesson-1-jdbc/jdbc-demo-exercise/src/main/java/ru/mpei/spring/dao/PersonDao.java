@@ -7,6 +7,7 @@ import java.util.List;
 public interface PersonDao {
     int count();
 
+
     void insert(Person person);
 
     Person getById(long id);

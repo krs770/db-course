@@ -28,13 +28,19 @@ public class StudentRepositoryJpa implements StudentRepository {
 
     @Override
     public Student save(Student student) {
-        return null;
+        if (student.getId() <= 0) {
+            em.persist(student);
+            return student;
+        } else {
+            return em.merge(student);
+        }
     }
 
     @Override
     public Optional<Student> findById(long id) {
-        return Optional.empty();
+        return Optional.ofNullable(em.find(Student.class, id));
     }
+
 
     @Override
     public List<Student> findAll() {

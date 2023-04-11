@@ -11,3 +11,4 @@ public class Avatar {
     private long id;
     private String photoUrl;
 }
+
