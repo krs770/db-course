@@ -1,0 +1,6 @@
+clickhouse:
+  host: localhost
+  port: 18123
+  database: measurement
+  user: default
+  password:
