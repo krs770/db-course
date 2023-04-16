@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2023-04-15-001-course-krasilov
+      author: krasilovaa
+      createTable:
+        tableName: courses
+        columns:
+          - column:
+              name: id
+              type: int
+              constraints:
+                nullable: false
+                primaryKey: true
+                primaryKeyName: pk_course
+          - column:
+              name: course_name
+              type: varchar(100)
+

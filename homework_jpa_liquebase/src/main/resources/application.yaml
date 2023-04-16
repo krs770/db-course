@@ -1,0 +1,26 @@
+server:
+  servlet:
+    contextPath: /api
+  port: 8080
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/postgres
+  liquibase:
+    change-log: classpath:/changelog/changelog-master.yaml
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+      springframework:
+        security: DEBUG
+        web: debug

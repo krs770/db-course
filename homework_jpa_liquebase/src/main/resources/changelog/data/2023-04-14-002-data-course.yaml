@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2023-04-14-001-data-course
+      author: krasilovaa
+      runOnChange: true
+      context: dev
+      loadUpdateData:
+        primaryKey: id
+        file: data/course.csv
+        relativeToChangelogFile: true
+        separator: ;
+        quotChar: '"'
+        seperator: ';'
+        encoding: UTF-8
+        tableName: courses
+
