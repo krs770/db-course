@@ -1,18 +1,24 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb
-    initialization-mode: never
+    url: jdbc:postgresql://localhost:5432/test
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
+
 
   jpa:
     generate-ddl: true
     hibernate:
       ddl-auto: create
 
-    properties:
-      hibernate:
-        format_sql: true
-
-    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+#
+#    show-sql: true
+#  sql:
+#    init:
+#      mode: always
 
 
 logging:

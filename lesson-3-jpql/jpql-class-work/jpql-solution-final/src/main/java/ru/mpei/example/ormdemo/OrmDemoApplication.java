@@ -8,6 +8,8 @@ public class OrmDemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OrmDemoApplication.class, args);
+
+
 	}
 
 }

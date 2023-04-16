@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2023-04-14-001-car-bondarbd
+      author: bondarbd
+      createTable:
+        tableName: car
+        columns:
+          - column:
+              name: id
+              type: int
+              constraints:
+                nullable: false
+                primaryKey: true
+                primaryKeyName: pk_car
+          - column:
+              name: name
+              type: varchar(100)
+          - column:
+              name: owner_name
+              type: varchar(250)
+          - column:
+              name: age
+              type: varchar(250)

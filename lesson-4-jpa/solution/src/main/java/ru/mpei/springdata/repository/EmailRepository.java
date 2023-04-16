@@ -1,5 +1,6 @@
 package ru.mpei.springdata.repository;
 
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -18,4 +19,7 @@ public interface EmailRepository extends JpaRepository<Email, Long> {
     @Transactional
     @Query("update Email e set e.address = :address where e.id = :id")
     void updateEmailById(@Param("id") long id, @Param("address") String address);
+
+    List<Email> findAllByPerson_Name(String name);
+
 }

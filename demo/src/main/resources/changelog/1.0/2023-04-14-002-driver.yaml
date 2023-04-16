@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2023-04-14-002-driver-bondarbd
+      author: bondarbd
+      createTable:
+        tableName: driver
+        columns:
+          - column:
+              name: id
+              type: int
+              constraints:
+                nullable: false
+                primaryKey: true
+                primaryKeyName: pk_driver
+          - column:
+              name: name
+              type: varchar(100)
+          - column:
+              name: car_id
+              type: int
+              constraints:
+                nullable: false
+                foreignKeyName: fk_car_driver
+                references: car(id)
+                deleteCascade: true

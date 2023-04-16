@@ -6,6 +6,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import ru.mpei.example.ormdemo.models.Student;
 
@@ -72,6 +73,7 @@ public class StudentRepositoryJpa implements StudentRepository {
     }
 
     @Override
+    @Transactional(readOnly = false, isolation = Isolation.READ_COMMITTED)
     public void deleteById(long id) {
         Query query = em.createQuery("delete " +
                         "from Student s " +

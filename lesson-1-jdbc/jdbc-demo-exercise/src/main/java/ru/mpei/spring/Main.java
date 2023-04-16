@@ -15,6 +15,9 @@ public class Main {
 
         PersonDao dao = context.getBean(PersonDao.class);
 
+
+        System.out.println("All persons in DB are:  " + dao.getAll());
+
         Console.main(args);
     }
 }
